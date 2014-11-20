@@ -1,0 +1,118 @@
+options:
+        # Tag Skryptu
+        tag: &b&lEloCraft
+       
+        # Co ile sekund mozna wysyłać wiadomości na chacie
+        ChatZ.spam: 5
+       
+        # Info | Chat jest wylaczony
+        ChatZ.msg.chat.off: &9Chat jest wylaczony
+       
+        # Info | Chat zostal wlacozny
+        ChatZ.msg.on: &9Chat zostal wlaczony przez &a%player%
+       
+        # Info | Chat jest juz wlaczony
+        ChatZ.msg.on.on: &9Chat jest juz wlaczony
+       
+        # Info | Chat zostal wylaczony
+        ChatZ.msg.off: &9Chat zostal wylaczony przez &a%player%
+       
+        # Info | Chat jest juz wylaczony
+        ChatZ.msg.off.off: &9Chat jest juz wylaczony
+       
+        # Info | Chat zostal wyczyszczony
+        ChatZ.msg.clear: &9Chat zostal wyczyszczony przez &a%player%
+       
+        # Info | Wiadomosc mozesz pisac co {@ChatZ.spam} sekund
+        ChatZ.msg.spam: &9Wiadomosc mozesz pisac co &c{@ChatZ.spam} &9sekund
+       
+        # Info | Brak uprawnien
+        ChatZ.permission: &4Nie masz uprawnien
+       
+        # Info | Reload skryptu
+        ChatZ.reload: &aSkrypt przeladowany pomyslnie
+       
+#--------------------------------------------------------------------------------------------------------#
+#                                              UPRAWNIEIA                                                #
+#--------------------------------------------------------------------------------------------------------#
+#       /ChatZ pomoc      ? Pomoc                                     ? brak                             #
+#       /ChatZ <on|off>   ? Wlacza|Wylacza chat                       ? ChatZ.admin                      #
+#       /ChatZ clear      ? Czysci chat                               ? ChatZ.admin                      #
+#       /ChatZ reload     ? Reload skryptu                            ? ChatZ.admin                      #
+#       /ChatZ info       ? Info o Skrypcie                           ? brak                             #
+#       brak              ? Mozliwosc pisania na wylaczonym chatcie   ? ChatZ.unlimited                  #
+#   [] - opcjonalnie | <> - wymagane                                                                     #
+#--------------------------------------------------------------------------------------------------------#
+ 
+#--------------------------------------------------------------------------------------------------------#
+#                                              KOD                                                       #
+#--------------------------------------------------------------------------------------------------------#
+variables:
+        {ChatZ.on} = true
+        {ChatZ.spam.%player%} = true
+       
+on chat:
+        if {ChatZ.on} is false:
+                if player doesn't have permission "ChatZ.unlimited":
+                        cancel event
+                        message "{@tag} &d&l| {@ChatZ.msg.chat.off}"
+        if {ChatZ.on} is true:
+                if {ChatZ.spam.%player%} is true:
+                        if player doesn't have permission "ChatZ.unlimited":
+                                cancel event
+                                message "{@tag} &d&l| {@ChatZ.msg.spam}"
+        set {ChatZ.spam.%player%} to true
+        wait {@ChatZ.spam} seconds
+        set {ChatZ.spam.%player%} to false
+       
+command /c [<text>]:
+        trigger:
+                if argument 1 is not set:
+                        execute player command "ChatZ pomoc"
+                if argument 1 is "pomoc":
+                        if player has permission "ChatZ.gracz":
+                                message "&5&l<---------------{@tag}&5&l--------------->"
+                                message "&e&l* &3/c <on|off> &f- &6on|off chat"
+                                message "&e&l* &3/cc &f- &6Czyszczenie chatu"
+                                message "&e&l* &3/c info &f- &6Pomoc"
+                                message "&5&l<---------------{@tag}&5&l--------------->"
+                        else:
+                                message "{@tag} &d&l| {@ChatZ.permission}"
+                if argument 1 is "on":
+                        if player has permission "ChatZ.admin":
+                                if {ChatZ.on} is true:
+                                        message "{@tag} &d&l| {@ChatZ.msg.on.on}"
+                                if {ChatZ.on} is false:
+                                        set {ChatZ.on} to true
+                                        broadcast "{@tag} &d&l| {@ChatZ.msg.on}"
+                        else:
+                                message "{@tag} &d&l| {@ChatZ.permission}"
+                if argument 1 is "off":
+                        if player has permission "ChatZ.admin":
+                                if {ChatZ.on} is false:
+                                        message "{@tag} &d&l| {@ChatZ.msg.off.off}"
+                                if {ChatZ.on} is true:
+                                        set {ChatZ.on} to false
+                                        broadcast "{@tag} &d&l| {@ChatZ.msg.off}"
+                        else:
+                                message "{@tag} &d&l| {@ChatZ.permission}"
+                if argument 1 is "reload":
+                        if player has permission "ChatZ.admin":
+                                execute console command "skript reload ogarchat"
+                                message "{@tag} &d&l| {@ChatZ.reload}"
+                                set {ChatZ.on} to true
+                        else:
+                                message "{@tag} &d&l| {@ChatZ.permission}"
+                if argument 1 is "info":
+                        message "&5&l<---------------{@tag}&5&l--------------->"
+                        message "&e&l* &3Autor: &aukasiu"
+                        message "&5&l<---------------{@tag}&5&l--------------->"
+command /cc:
+        trigger:
+                if player has permission "ChatZ.admin":
+                loop 100 times:
+                        broadcast ""
+                loop 1 times:
+                        broadcast "{@tag} &d&l| {@ChatZ.msg.clear}"
+                else:
+                        message "{@tag} &d&l| {@ChatZ.permission}"
