@@ -1,0 +1,244 @@
+options:
+        tag: &b[&6Drop&b]
+       
+        zelazo: 6.5%
+        zloto: 5.5%
+        diament: 4.0%
+        szmaragd: 3.0%
+        wegiel: 6.0%
+        redstone: 4.5%
+        lapis: 4.5%
+       
+        zelazo1: 7.0%
+        zloto1: 6.0%
+        diament1: 4.5%
+        szmaragd1: 3.5%
+        wegiel1: 6.5%
+        redstone1: 5.0%
+        lapis1: 5.0%
+       
+        zelazo2: 7.5%
+        zloto2: 6.5%
+        diament2: 5.0%
+        szmaragd2: 4.0%
+        wegiel2: 7.0%
+        redstone2: 5.5%
+        lapis2: 5.5%
+       
+        zelazo3: 8.0%
+        zloto3: 7.0%
+        diament3: 5.5%
+        szmaragd3: 4.5%
+        wegiel3: 7.5%
+        redstone3: 6.0%
+        lapis3: 6.0%
+       
+on mine of any ore:
+        cancel event
+        delete block
+        send "{@tag}&7 Ten surowiec wypada tylko ze stone."
+on mine of stone:
+        if player's tool is pickaxe of fortune 0:
+                chance of {@zelazo}:
+                        give a random number between 3 and 1 of iron ingot to the player
+                        send "{@tag}&7 Znalazles zelazo!"
+                        stop
+        else:
+                if player's tool is pickaxe of fortune 1:
+                        chance of {@zelazo1}:
+                                give a random number between 4 and 2 of iron ingot to the player
+                                send "{@tag}&7 Znalazles zelazo!"
+                                stop
+                else:
+                        if player's tool is pickaxe of fortune 2:
+                                chance of {@zelazo2}:
+                                        give a random number between 5 and 3 of iron ingot to the player
+                                        send "{@tag}&7 Znalazles zelazo!"
+                                        stop
+                        else:
+                                if player's tool is pickaxe of fortune 3:
+                                        chance of {@zelazo3}:
+                                                give a random number between 6 and 4 of iron ingot to the player
+                                                send "{@tag}&7 Znalazles zelazo!"
+                                                stop
+                if player's tool is pickaxe of fortune 0:
+                        chance of {@lapis}
+                        give a random number between 3 and 1 of lapis lazuli to the player
+                        send "{@tag}&7 Znalazles lapis!"
+                        stop
+                else:
+                        if player's tool is pickaxe of fortune 1:
+                                chance of {@zloto1}:
+                                        give a random number between 4 and 2 of gold ingot to the player
+                                        send "{@tag}&7 Znalazles zloto!"
+                                        stop
+                        else:
+                                if player's tool is pickaxe of fortune 2:
+                                        chance of {@zloto2}:
+                                                give a random number between 5 and 3 of gold ingot to the player
+                                                send "{@tag}&7 Znalazles zloto!"
+                                                stop
+                                else:
+                                        if player's tool is pickaxe of fortune 3:
+                                                chance of {@zloto3}:
+                                                        give a random number between 10 and 5 of gold ingot to the player
+                                                        send "{@tag}&7 Znalazles zloto!"
+                                                        stop
+        if player's tool is pickaxe of fortune 0:
+                chance of {@diament}:
+                        give a random number between 2 and 1 of diamond to the player
+                        send "{@tag}&7 Znalazles diament!"
+                        stop
+        else:
+                if player's tool is pickaxe of fortune 1:
+                        chance of {@diament1}:
+                                give a random number between 3 and 1 of diamond to the player
+                                send "{@tag}&7 Znalazles diament!"
+                                stop
+                else:
+                        if player's tool is pickaxe of fortune 2:
+                                chance of {@diament2}:
+                                        give a random number between 3 and 2 of diamond to the player
+                                        send "{@tag}&7 Znalazles diament!"
+                                        stop
+                        else:
+                                if player's tool is pickaxe of fortune 3:
+                                        chance of {@diament3}:
+                                                give a random number between 4 and 2 of diamond to the player
+                                                send "{@tag}&7 Znalazles diament!"
+                                                stop
+        if player's tool is pickaxe of fortune 0:      
+                chance of {@szmaragd}:
+                        give 1 emerald to the player
+                        send "{@tag}&7 Znalazles szmaragd!"
+                        stop
+        else:
+                if player's tool is pickaxe of fortune 1:                      
+                        chance of {@szmaragd1}:
+                                give a random number between 2 and 1 of emerald to the player
+                                send "{@tag}&7 Znalazles szmaragd!"
+                                stop
+                else:  
+                        if player's tool is pickaxe of fortune 2:
+                                chance of {@szmaragd2}:
+                                        give a random number between 3 and 1 of emerald to the player
+                                        send "{@tag}&7 Znalazles szmaragd!"
+                                        stop
+                        else:
+                                if player's tool is pickaxe of fortune 3:
+                                        chance of {@szmaragd2}:
+                                                give a random number between 3 and 2 of emerald to the player
+                                                send "{@tag}&7 Znalazles szmaragd!"
+                                                stop
+        if player's tool is pickaxe of fortune 0:
+                chance of {@wegiel}:
+                        give a random number between 4 and 1 of coal to the player
+                        send "{@tag}&7 Znalazles wegiel!"
+                        stop
+        else:
+                if player's tool is pickaxe of fortune 1:
+                        chance of {@wegiel1}:
+                                give a random number between 4 and 2 of coal to the player
+                                send "{@tag}&7 Znalazles wegiel!"
+                                stop
+                else:
+                        if player's tool is pickaxe of fortune 2:
+                                chance of {@wegiel2}:
+                                        give a random number between 5 and 2 of coal to the player
+                                        send "{@tag}&7 Znalazles wegiel!"
+                                        stop
+                        else:
+                                if player's tool is pickaxe of fortune 3:
+                                        chance of {@wegiel3}:
+                                                give a random number between 6 and 3 of coal to the player
+                                                send "{@tag}&7 Znalazles wegiel!"
+                                                stop
+        if player's tool is pickaxe of fortune 0:
+                chance of {@redstone}:
+                        give a random number between 4 and 1 of redstone to the player
+                        send "{@tag}&7 Znalazles redstone!"
+                        stop
+        else:
+                if player's tool is pickaxe of fortune 1:
+                        chance of {@redstone1}:
+                                give a random number between 4 and 2 of redstone to the player
+                                send "{@tag}&7 Znalazles redstone!"
+                                stop
+                else:
+                        if player's tool is pickaxe of fortune 2:
+                                chance of {@redstone2}:
+                                        give a random number between 5 and 2 of redstone to the player
+                                        send "{@tag}&7 Znalazles redstone!"
+                                        stop
+                        else:
+                                if player's tool is pickaxe of fortune 3:
+                                        chance of {@redstone3}:
+                                                give a random number between 6 and 3 of redstone to the player
+                                                send "{@tag}&7 Znalazles redstone!"
+                                                stop
+        if player's tool is pickaxe of fortune 0:
+                chance of {@zloto}:
+                        give a random number between 4 and 1 of gold ingot to the player
+                        send "{@tag}&7 Znalazles zloto!"
+                        stop
+        else:
+                if player's tool is pickaxe of fortune 1:
+                        chance of {@lapis1}:
+                                give a random number between 4 and 2 of lapis lazuli to the player
+                                send "{@tag}&7 Znalazles lapis!"
+                                stop
+                else:
+                        if player's tool is pickaxe of fortune 2:
+                                chance of {@lapis2}:
+                                        give a random number between 5 and 2 of lapis lazuli to the player
+                                        send "{@tag}&7 Znalazles lapis!"
+                                        stop
+                        else:
+                                if player's tool is pickaxe of fortune 3:
+                                        chance of {@lapis3}:
+                                                give a random number between 6 and 3 of lapis lazuli to the player
+                                                send "{@tag}&7 Znalazles lapis!"
+                                                stop
+ 
+command /drop [<text>]:
+        trigger:
+                send "&d---&3&lDROP&d---                                     &aPlugin &cby &bukasiu"
+                send "{@tag}&8 Zelazo:&7 {@zelazo}                           &aPlugin &cby &bukasiu"
+                send "{@tag}&6 Zloto:&7 {@zloto}                             &aPlugin &cby &bukasiu"
+                send "{@tag}&b Diament:&7 {@diament}                         &aPlugin &cby &bukasiu"
+                send "{@tag}&2 Szmaragd:&7 {@szmaragd}                       &aPlugin &cby &bukasiu"
+                send "{@tag}&0 Wegiel:&7 {@wegiel}                           &aPlugin &cby &bukasiu"
+                send "{@tag}&4 Redstone:&7 {@redstone}                       &aPlugin &cby &bukasiu"
+                send "{@tag}&1 Lapis lazuli:&7 {@lapis}                      &aPlugin &cby &bukasiu"
+command /fortune [<text>]:
+        trigger:
+                send "&d---&3&lDROP&d---                                   &aPlugin &cby &bukasiu"
+                send "Drop z fortune 1                                       &aPlugin &cby &bukasiu"
+                send "{@tag}&8 Zelazo:&7 {@zelazo1}                           &aPlugin &cby &bukasiu"
+                send "{@tag}&6 Zloto:&7 {@zelazo1}                             &aPlugin &cby &bukasiu"
+                send "{@tag}&b Diament:&7 {@diament}                         &aPlugin &cby &bukasiu"
+                send "{@tag}&2 Szmaragd:&7 {@szmaragd1}                       &aPlugin &cby &bukasiu"
+                send "{@tag}&0 Wegiel:&7 {@wegiel1}                           &aPlugin &cby &bukasiu"
+                send "{@tag}&4 Redstone:&7 {@redstone1}                       &aPlugin &cby &bukasiu"
+                send "{@tag}&1 Lapis lazuli:&7 {@lapis1}               &aPlugin &cby &bukasiu"
+                send " "
+                send " "
+                send "Drop z fortune 2                                       &aPlugin &cby &bukasiu"
+                send "{@tag}&8 Zelazo:&7 {@zelazo2}                           &aPlugin &cby &bukasiu"
+                send "{@tag}&6 Zloto:&7 {@zloto2}                             &aPlugin &cby &bukasiu"
+                send "{@tag}&b Diament:&7 {@diament2}                         &aPlugin &cby &bukasiu"
+                send "{@tag}&2 Szmaragd:&7 {@szmaragd2}                       &aPlugin &cby &bukasiu"
+                send "{@tag}&0 Wegiel:&7 {@wegiel2}                           &aPlugin &cby &bukasiu"
+                send "{@tag}&4 Redstone:&7 {@redstone2}                       &aPlugin &cby &bukasiu"
+                send "{@tag}&1 Lapis lazuli:&7 {@lapis2}               &aPlugin &cby &bukasiu"
+                send " "
+                send " "
+                send "Drop z fortune 3                                       &aPlugin &cby &bukasiu"
+                send "{@tag}&8 Zelazo:&7 {@zelazo3}                           &aPlugin &cby &bukasiu"
+                send "{@tag}&6 Zloto:&7 {@zloto3}                             &aPlugin &cby &bukasiu"
+                send "{@tag}&b Diament:&7 {@diament3}                         &aPlugin &cby &bukasiu"
+                send "{@tag}&2 Szmaragd:&7 {@szmaragd3}                       &aPlugin &cby &bukasiu"
+                send "{@tag}&0 Wegiel:&7 {@wegiel3}                           &aPlugin &cby &bukasiu"
+                send "{@tag}&4 Redstone:&7 {@redstone3}                       &aPlugin &cby &bukasiu"
+                send "{@tag}&1 Lapis lazuli:&7 {@lapis3}               &aPlugin &cby &bukasiu"
+                send " "
