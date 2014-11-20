@@ -1,0 +1,80 @@
+options:
+        logo: &b&lSerwer
+every 5 real seconds:
+        if {ukasiu.spawn.1} is set:
+                spawn 1 cow at {ukasiu.spawn.1}
+                ignite last spawned cow
+                spawn 1 cow at {ukasiu.spawn.1}
+                ignite last spawned cow
+        if {ukasiu.spawn.2} is set:
+                spawn 1 pig at {ukasiu.spawn.2}
+                ignite last spawned pig
+                spawn 1 pig at {ukasiu.spawn.2}
+                ignite last spawned pig
+        if {ukasiu.spawn.3} is set:
+                spawn 1 pig at {ukasiu.spawn.3}
+                ignite last spawned pig
+                spawn 1 pig at {ukasiu.spawn.3}
+                ignite last spawned pig
+        if {ukasiu.spawn.4} is set:
+                spawn 1 pig at {ukasiu.spawn.4}
+                ignite last spawned pig
+                spawn 1 pig at {ukasiu.spawn.4}
+                ignite last spawned pig
+        if {ukasiu.spawn.5} is set:
+                spawn 1 pig at {ukasiu.spawn.5}
+                ignite last spawned pig
+                spawn 1 pig at {ukasiu.spawn.5}
+                ignite last spawned pig
+        if {ukasiu.spawn.6} is set:
+                spawn 1 pig at {ukasiu.spawn.6}
+                ignite last spawned pig
+                spawn 1 pig at {ukasiu.spawn.6}
+                ignite last spawned pig
+command /ukasiupigreset:
+        trigger:
+                if player has permission "ukasiu.reset":
+                        delete {ukasiu.spawn.1}
+                        delete {ukasiu.spawn.2}
+                        delete {ukasiu.spawn.3}
+                        delete {ukasiu.spawn.4}
+                        delete {ukasiu.spawn.5}
+                        delete {ukasiu.spawn.6}
+                        send "{@logo} &cSpawn dla swin zostal usuniety !"
+                        stop
+                else:
+                        send "{@logo} &cNie masz uprawnien !"
+                        stop
+command /ukasiupig [<text>]:
+        trigger:
+                if player has permission "ukasiu.set":
+                        if arg 1 is "1":
+                                set {ukasiu.spawn.1} to location of player
+                                send "{@logo} &cUstawiles spawn numer 1"
+                                stop
+                        if arg 1 is "2":
+                                set {ukasiu.spawn.2} to location of player
+                                send "{@logo} &cUstawiles spawn numer 2"
+                                stop
+                        if arg 1 is "3":
+                                set {ukasiu.spawn.3} to location of player
+                                send "{@logo} &cUstawiles spawn numer 3"
+                                stop
+                        if arg 1 is "4":
+                                set {ukasiu.spawn.4} to location of player
+                                send "{@logo} &cUstawiles spawn numer 4"
+                                stop
+                        if arg 1 is "5":
+                                set {ukasiu.spawn.5} to location of player
+                                send "{@logo} &cUstawiles spawn numer 5"
+                                stop
+                        if arg 1 is "6":
+                                set {ukasiu.spawn.6} to location of player
+                                send "{@logo} &cUstawiles spawn numer 6"
+                                stop
+                        else:
+                                send "{@logo} &cUzycie: /ukasiupig 1/2/3/4/5/6"
+                                stop
+                else:
+                        send "{@logo} &cNie posiadasz uprawnien !"
+                        stop
