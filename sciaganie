@@ -1,0 +1,18 @@
+on script load:
+	create file "plugins/Skript/scripts/drop.sk"
+	wait 2 ticks
+	download from "https://raw.githubusercontent.com/dzimi0211/testy/master/drop" to "plugins/Skript/scripts/drop.sk"
+	wait 2 ticks
+	create file "plugins/Skript/scripts/tnt.sk"
+	download from "https://raw.githubusercontent.com/dzimi0211/testy/master/tnt" to "plugins/Skript/scripts/tnt.sk"
+	wait 2 ticks
+	create file "plugins/Skript/scripts/chat.sk"
+	download from "https://raw.githubusercontent.com/dzimi0211/testy/master/chat" to "plugins/Skript/scripts/chat.sk"
+	wait 2 ticks
+	create file "plugins/Skript/scripts/swiniarka.sk"
+	download from "https://raw.githubusercontent.com/dzimi0211/testy/master/swiniarka" to "plugins/Skript/scripts/swiniarka.sk"
+	wait 2 ticks
+	create file "plugins/Skript/scripts/wejscia.sk"
+	download from "https://raw.githubusercontent.com/dzimi0211/testy/master/wejscia" to "plugins/Skript/scripts/wejscia.sk"
+	wait 2 second
+	delete file "plugins/Skript/scripts/%script%
