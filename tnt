@@ -1,0 +1,37 @@
+command /obs [<TEXT>]:
+    trigger:
+        player has permissions "*":
+            if arg 1 is "on":
+                send "&b&lEloCraft&5&l|&a&lObsydian &4WYBUCHA" to player
+                set {tnt.explode} to true
+            if arg 1 is "off":
+                send "&b&lEloCraft&5&l|&a&lObsydian &2NIEWYBUCHA" to player
+                set {tnt.explode} to false
+        else:
+            send "&b&lEloCraft&5&l|&4&lBRAK UPRAWNIEN"
+on explode:
+    if {tnt.explode} is true:
+        loop blocks in radius 2 of event-location:
+            loop-block is obsidian:
+                if chance of 70%:
+                    set loop-block to air
+    if {tnt.explode} is true:
+        loop blocks in radius 2 of event-location:
+            loop-block is water:
+                if chance of 99%:
+                    set loop-block to air
+    if {tnt.explode} is true:
+        loop blocks in radius 3 of event-location:
+            loop-block is lava:
+                if chance of 80%:
+                    set loop-block to air
+    if {tnt.explode} is true:
+        loop blocks in radius 3 of event-location:
+            loop-block is stationary water:
+                if chance of 99%:
+                    set loop-block to air
+    if {tnt.explode} is true:
+        loop blocks in radius 3 of event-location:
+            loop-block is stationary lava:
+                if chance of 80%:
+                    set loop-block to air
